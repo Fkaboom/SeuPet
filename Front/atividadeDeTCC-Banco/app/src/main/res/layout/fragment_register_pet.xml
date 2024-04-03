@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.RegisterPetFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+
+
+        <TextView
+            android:id="@+id/textPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            app:layout_constraintEnd_toEndOf="@+id/imagem"
+            app:layout_constraintStart_toStartOf="@+id/imagem"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/imagem"
+            android:text="Foto do Pet Perdido"
+            android:textSize="16sp"
+            />
+
+        <ImageView
+            android:id="@+id/imagem"
+            android:layout_width="match_parent"
+            android:layout_height="204dp"
+            android:onClick="pickPhoto"
+            android:layout_marginTop="25dp"
+            android:layout_marginHorizontal="70dp"
+            app:layout_constraintBottom_toTopOf="@+id/select_animal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textPhoto"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+
+        <Spinner
+            android:id="@+id/select_animal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/Lavander"
+            app:layout_constraintTop_toBottomOf="@+id/imagem"
+            app:layout_constraintBottom_toTopOf="@id/select_race"
+            android:layout_marginTop="14dp"
+            android:entries="@array/animal"
+            tools:ignore="MissingConstraints" />
+
+        <Spinner
+            android:id="@+id/select_race"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/Lavander"
+            app:layout_constraintTop_toBottomOf="@+id/select_animal"
+            app:layout_constraintBottom_toTopOf="@id/select_color"
+            android:layout_marginTop="14dp"
+            tools:ignore="MissingConstraints" />
+
+        <Spinner
+            android:id="@+id/select_color"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/Lavander"
+            app:layout_constraintTop_toBottomOf="@+id/select_race"
+            app:layout_constraintBottom_toTopOf="@+id/petDescrition"
+            android:layout_marginTop="14dp"
+            android:entries="@array/color"
+            tools:ignore="MissingConstraints" />
+
+
+        <EditText
+            android:id="@+id/petDescrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descrição do Pet"
+            android:layout_marginVertical="15dp"
+            android:layout_marginHorizontal="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_color"
+            app:layout_constraintBottom_toTopOf="@id/petLocation"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/petLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Local encontrado/Onde se encontra"
+            android:layout_marginVertical="15dp"
+            android:layout_marginHorizontal="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/petDescrition"
+            app:layout_constraintBottom_toTopOf="@+id/bt_pet"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+        <Button
+            android:id="@+id/bt_pet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/registrar_pet"
+            android:textColor="@color/Dutchwhite"
+            android:backgroundTint="@color/blue"
+            app:layout_constraintTop_toBottomOf="@+id/petLocation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/photoImport"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/lapis"
+
+            />
+        <Button
+            android:id="@+id/selectGallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Importar da Galeria"
+            android:backgroundTint="@color/Dutchwhite"
+            android:textColor="@color/blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/selectPhoto"
+            android:layout_marginHorizontal="25dp"
+            />
+
+        <Button
+            android:id="@+id/selectPhoto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="@color/Dutchwhite"
+            android:textColor="@color/blue"
+            android:text="Tirar Foto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/selectGallery"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="25dp"
+
+            android:textSize="10dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

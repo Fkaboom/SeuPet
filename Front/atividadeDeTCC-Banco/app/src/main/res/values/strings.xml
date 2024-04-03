@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">SeuPet</string>
+    <string name="senha">senha</string>
+    <string name="logar">entrar</string>
+    <string name="email">email</string>
+    <string name="logo">logo</string>
+    <string name="novo_por_aqui">Registrar</string>
+    <string name="registrar">registrar</string>
+    <string name="registrar_pet">registrar pet perdido</string>
+    <string name="inserirSenha">Insira sua senha</string>
+    <string name="insiraEmail">insira seu e-mail</string>
+    <string name="insiraNome">insira seu nome</string>
+    <string name="confirmarSenha">confirme sua senha</string>
+    <string name="insiraNumero">Insira seu número</string>
+    <string name="home">home</string>
+    <string name="login_email_error_message">e-mail invalido</string>
+    <string name="login_error_message">algum dos campos está errado</string>
+    <string name="login_password_error_message">senha não pode ficar vazia</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sucess">Sucesso</string>
+    <string name="register_name_error_message">Campo nome não pode estar vazio</string>
+    <string name="register_email_error_message">Campo e-mail não pode estar vazio</string>
+    <string name="register_user_succes">Registrado com sucesso</string>
+    <string name="register_pdw_error_message">Campo senha não pode estar vazio</string>
+</resources>

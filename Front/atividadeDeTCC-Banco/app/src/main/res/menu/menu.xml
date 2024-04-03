@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Perfil"
+        android:id="@+id/perfil"
+        android:icon="@drawable/perfil"/>
+    <item android:title="Procurar Pets"
+        android:id="@+id/procurar"
+        android:icon="@drawable/procurar"/>
+    <item android:title="ONGS"
+        android:id="@+id/ongs"
+        android:icon="@drawable/ongs"/>
+</menu>

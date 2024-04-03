@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="racesDog">
+        <item>Selecione</item>
+        <item>Sem Raça</item>
+        <item>Poodle</item>
+        <item>Pug</item>
+        <item>Husky</item>
+        <item>Bulldog</item>
+        <item>GOlden</item>
+        <item>Pastor Alemão</item>
+        <item>Pincher</item>
+        <item>Rottweiler</item>
+        <item>Salsicha</item>
+        <item>ChowChow</item>
+        <item>Labrador</item>
+
+    </string-array>
+    <string-array name="racesCat">
+        <item>Selecione</item>
+        <item>Sem Raça</item>
+        <item>Siames</item>
+        <item>Persa</item>
+        <item>Sphinx</item>
+        <item>Outro</item>
+    </string-array>
+
+    <string-array name="outro">
+        <item>Outro</item>
+    </string-array>
+    <string-array name="color">
+        <item>Selecione</item>
+        <item>Caramelo</item>
+        <item>Preto</item>
+        <item>Branco</item>
+        <item>Multi-cor</item>
+        <item>Amarelo</item>
+        <item>Cinza</item>
+        <item>Preto</item>
+        <item>Outra</item>
+    </string-array>
+<string-array name="animal">
+    <item>Selecione</item>
+    <item>Gato</item>
+    <item>Cachorro</item>
+    <item>Passaro</item>
+    <item>Hamster</item>
+    <item>Tartaruga</item>
+</string-array>
+
+
+</resources>
