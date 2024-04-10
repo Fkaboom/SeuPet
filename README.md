@@ -5,8 +5,7 @@
 - Sobre
 - Funcionalidades
 - Como usar
-- Contribuição
-- Autores
+- Autor
 - Bugs Registrado
 
 ## Sobre
