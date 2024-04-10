@@ -6,5 +6,6 @@ sealed class LoginViewState {
     object ShowHomeScreen : LoginViewState()
     object ShowLoading : LoginViewState()
     object ShowRegister : LoginViewState()
+    object ShowServerError : LoginViewState()
 
 }

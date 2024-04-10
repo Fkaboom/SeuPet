@@ -23,4 +23,8 @@
     <string name="register_email_error_message">Campo e-mail não pode estar vazio</string>
     <string name="register_user_succes">Registrado com sucesso</string>
     <string name="register_pdw_error_message">Campo senha não pode estar vazio</string>
+    <string name="server_error_message">Erro no servidor</string>
+    <string name="campoVazio">Algum dos campos esta vazio</string>
+    <string name="salvarPerfil">Salvar Perfil</string>
+    <string name="atualizado">Perfil Atualizado</string>
 </resources>

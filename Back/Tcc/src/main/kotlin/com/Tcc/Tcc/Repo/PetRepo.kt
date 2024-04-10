@@ -9,4 +9,6 @@ interface PetRepo : MongoRepository<PetModel, String> {
     fun findPetByColor(petColor: String): List<PetModel?>
     fun findPetByRace(petRace: String): List<PetModel?>
     fun findByPetId(petId: String): PetModel?
+    fun findByAnimal(animal: String): List<PetModel?>
+
 }

@@ -12,5 +12,7 @@ data class UserModel(
     val email: String,
     val number: String,
     val pwd: String,
+    val userPetName: String? = null,
+    val userPetDescription: String? = null,
 
 )

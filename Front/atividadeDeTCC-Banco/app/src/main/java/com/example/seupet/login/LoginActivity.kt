@@ -48,8 +48,14 @@ class LoginActivity : AppCompatActivity() {
                 LoginViewState.ShowPasswordErrorMessage -> showPasswordError()
                 LoginViewState.ShowLoading -> showLoading()
                 LoginViewState.ShowRegister -> showRegister()
+                LoginViewState.ShowServerError -> showServerError()
             }
         }
+    }
+
+    private fun showServerError() {
+        binding.pbLoading.hide()
+        Snackbar.make(binding.root, R.string.server_error_message, Snackbar.LENGTH_LONG).show()
     }
 
     private fun showRegister() {

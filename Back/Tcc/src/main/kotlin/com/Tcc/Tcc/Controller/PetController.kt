@@ -7,6 +7,7 @@ package com.Tcc.Tcc.Controller
 
 
 import com.Tcc.Tcc.Model.PetModel
+import com.Tcc.Tcc.Model.UserModel
 import com.Tcc.Tcc.Repo.PetRepo
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -21,8 +22,10 @@ class PetController(@Autowired val petRepo: PetRepo) {
 
 
     @GetMapping("/all")
-    fun getCount(): Int {
-        return petRepo.findAll().count()
+    fun getAll(): ResponseEntity<MutableList<PetModel>> {
+        val pet = petRepo.findAll()
+        return if (pet != null) ResponseEntity.ok(pet) else ResponseEntity
+            .notFound().build()
     }
 
     @GetMapping("/{id}")
@@ -47,6 +50,15 @@ class PetController(@Autowired val petRepo: PetRepo) {
     @GetMapping("/color/{color}")
     fun getpetBycolor(@PathVariable("color") color: String): ResponseEntity<List<PetModel?>> {
         val pet = petRepo.findPetByColor(color)
+        return if (pet != null) ResponseEntity.ok(pet) else ResponseEntity
+            .notFound().build()
+    }
+
+
+
+    @GetMapping("/animal/{animal}")
+    fun getpetByAnimal(@PathVariable("animal") animal: String): ResponseEntity<List<PetModel?>> {
+        val pet = petRepo.findByAnimal(animal)
         return if (pet != null) ResponseEntity.ok(pet) else ResponseEntity
             .notFound().build()
     }

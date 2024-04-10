@@ -9,8 +9,11 @@ import retrofit2.http.POST
 
 interface PetApi {
 
-    @get:GET("/pet/all")
-    val allPets: Call<List<Any?>?>?
+    @GET("/pet/all")
+    fun allPets(): Call<List<PetModel>>
+
+
+
 
     @POST("/pet/insert")
     fun insert(@Body pet: PetModel?): Call<PetModel?>?

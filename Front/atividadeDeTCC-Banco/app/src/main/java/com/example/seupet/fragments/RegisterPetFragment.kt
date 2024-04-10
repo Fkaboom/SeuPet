@@ -26,6 +26,7 @@ import com.example.seupet.databinding.FragmentRegisterPetBinding
 import com.example.seupet.login.data.local.PetModel
 import com.example.seupet.login.data.local.UserModel
 import com.example.seupet.register.RegisterViewState
+import com.google.android.material.snackbar.Snackbar
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -110,7 +111,7 @@ class RegisterPetFragment : Fragment() {
                 }
 
                override fun onNothingSelected(p0: AdapterView<*>?) {
-                   TODO("Not yet implemented")
+                   Snackbar.make(binding.root, R.string.campoVazio, Snackbar.LENGTH_LONG).show()
                }
 
 
@@ -124,7 +125,12 @@ class RegisterPetFragment : Fragment() {
                 val petModel = PetModel(image =  imageString, color = selectColor.selectedItem.toString(), descrition = petDescrition.text.toString(), location = petLocation.text.toString(), race = selectRace.selectedItem.toString(), animal = selectAnimal.selectedItem.toString())
                 petApi.insert(petModel)?.enqueue(object : Callback<PetModel?> {
                     override fun onResponse(call: Call<PetModel?>, response: Response<PetModel?>) {
-                        pbLoading.show()
+                        val secondFragment =PetsFragment()
+                        val transaction=requireActivity().supportFragmentManager
+                            .beginTransaction()
+                        transaction.replace(R.id.frame_layout,secondFragment)
+                        transaction.commit()
+
                     }
 
                     override fun onFailure(call: Call<PetModel?>, t: Throwable) {

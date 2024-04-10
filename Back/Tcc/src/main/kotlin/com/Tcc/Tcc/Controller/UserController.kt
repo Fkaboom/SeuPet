@@ -3,12 +3,14 @@ package com.Tcc.Tcc.Controller
 
 
 
+import com.Tcc.Tcc.Model.ProfileModel
 import com.Tcc.Tcc.Repo.UserRepo
 import com.Tcc.Tcc.Model.UserModel
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import java.util.*
+
 
 @RestController
 @RequestMapping("/user")
@@ -30,7 +32,7 @@ class UserController(@Autowired val userRepo: UserRepo) {
             .notFound().build()
     }
 
-    @GetMapping("/{email}")
+    @GetMapping("/email/{email}")
     fun getUserByEmail(@PathVariable("email") email: String): ResponseEntity<UserModel> {
         val user = userRepo.findByEmail(email)
         return if (user != null) ResponseEntity.ok(user) else ResponseEntity
@@ -56,9 +58,23 @@ class UserController(@Autowired val userRepo: UserRepo) {
         }
     }
 
+    @PutMapping("/update/{email}")
+    fun update(@PathVariable("email") email: String, @RequestBody newUser: ProfileModel): UserModel? {
+        val existingUser = userRepo.findByEmail(email)
+        if (existingUser != null) {
+            existingUser.name = newUser.name
+            existingUser.number = newUser.number
+            existingUser.userPetName = newUser.userPetName
+            existingUser.userPetDescription = newUser.userPetDescription
+            userRepo.save(existingUser)
+        }
+        return existingUser
+    }
 
 
-        @DeleteMapping("/{id}")
+
+
+    @DeleteMapping("/{id}")
     fun deleteUser(@PathVariable("id") id: String) {
         userRepo.findByUserId(id)?.let {
             userRepo.delete(it)
